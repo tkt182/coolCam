@@ -3,14 +3,25 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     ofHideCursor();
-    rollCam.setup();//rollCam's setup.
-    rollCam.setCamSpeed(0.1);//rollCam's speed set;
+    rollCam.setup();
+    rollCam.setCamSpeed(0.1);
+    
+    if(cameraType) {
+        cam = &trackingCam;
+    }else{
+        cam = &rollCam;
+    }
+    //cam = &rollCam;
+    //cam = static_cast<ofCamera *>(&rollCam);
+    //cam = dynamic_cast<ofxRollingCam *>(&rollCam);
+    //cam->setup();//rollCam's setup.
+    //cam->setCamSpeed(0.1);//rollCam's speed set;
     ofBackground(0);
     lig.setup();
     lig.setAmbientColor(ofFloatColor(0.5,0.5,0.5,1.0));
     
     blockCnt = 15;
-    float r=ofGetHeight()*0.8;
+    float r=ofGetHeight()*0.1;
     for (int i=0; i<100; i++) {
         ofVec3f newPos;
         newPos.set(ofRandomf()*r,ofRandomf()*r,ofRandomf()*r);
@@ -21,13 +32,19 @@ void ofApp::setup(){
     myFbo.allocate(ofGetWindowWidth(), ofGetWindowHeight());
     myGlitch.setup(&myFbo);
 
-    soundStream.setup(this, 0, 1, 44100, 256, 4);
+    //soundStream.setup(this, 0, 1, 44100, 256, 4);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     
     cout << curVol << endl;
+    
+    if(cameraType) {
+        cam = &trackingCam;
+    }else{
+        cam = &rollCam;
+    }
     
     if(curVol > 0.005){
         if(blockCnt == 15){
@@ -42,6 +59,7 @@ void ofApp::update(){
     
     rollCam.update();   //rollCam's rotate update.
 
+
     myFbo.begin();
     ofClear(0, 0, 0,255);
     ofSetColor(255);
@@ -53,8 +71,16 @@ void ofApp::update(){
     lig.enable();
     ofPopMatrix();
     
-    //ofPushMatrix();
-    rollCam.begin(); //rollCam begin
+    ofPushMatrix();
+    
+    trackingCam.updateCameraSettings(ofVec3f(0.0, 0.0, 0.0), 100.0);
+    trackingCam.pushRotateMatrix();
+    
+    //cam = static_cast<ofCamera *>(&rollCam);
+    cam->begin(); //rollCam begin
+    //rollCam.begin();
+
+    
     ofEnableDepthTest();
     ofFill();
     ofSetColor(255,255,255);
@@ -64,9 +90,14 @@ void ofApp::update(){
         ofSetColor(255*((float)i/pos.size()));
         ofDrawBox(pos[i].x, pos[i].y, pos[i].z, ofGetWindowHeight()/20);
     }
+    trackingCam.popRotateMatrix();
+    
+    cam->end();
+    //rollCam.end();
     
     ofPopMatrix();
     
+    trackingCam.calcCameraAxis();
     myFbo.end();
 }
 
@@ -98,6 +129,12 @@ void ofApp::keyPressed(int key){
     }
     if (key=='5') {//Inputting optional distance.
         rollCam.setScale(1);
+    }
+    if (key=='6') {
+        cameraType = 0;
+    }
+    if (key=='7') {
+        cameraType = 1;
     }
     
     if (key==' ') {
@@ -149,12 +186,12 @@ void ofApp::mouseMoved(int x, int y ){
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
-
+    trackingCam.setMouseRotation(ofVec2f(x,y));
 }
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-
+    trackingCam.updateLastMousePosition(ofVec2f(x,y));
 }
 
 //--------------------------------------------------------------

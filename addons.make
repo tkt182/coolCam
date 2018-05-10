@@ -1,2 +1,3 @@
 ofxPostGlitch
 ofxRollingCam
+ofxTrackingCamera

@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ofxRollingCam.h"
+#include "ofxTrackingCamera.h"
 #include "ofxPostGlitch.h"
 
 class ofApp : public ofBaseApp{
@@ -29,6 +30,11 @@ class ofApp : public ofBaseApp{
         int   blockCnt;
     
         ofxRollingCam rollCam;
+        ofxTrackingCamera trackingCam;
+        ofCamera *cam;
+    
+        bool cameraType = 0;
+    
         ofLight lig;
         std::vector <ofVec3f> pos;
         bool hide;

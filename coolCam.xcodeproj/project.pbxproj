@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1DC46FEBBD752B1B5E3799D5 /* ofxRollingCam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6E6ACBABD11E244A070497C /* ofxRollingCam.cpp */; };
+		667011467B1042AA979F7B2A /* ofxTrackingCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CAF45341D212AF91AF3EEFBB /* ofxTrackingCamera.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
@@ -44,18 +45,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		40C409F696FE990F95E1B9D3 /* ofxPostGlitch.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxPostGlitch.cpp; path = ../../../addons/ofxPostGlitch/src/ofxPostGlitch.cpp; sourceTree = SOURCE_ROOT; };
+		40C409F696FE990F95E1B9D3 /* ofxPostGlitch.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxPostGlitch.cpp; path = ../../../addons/ofxPostGlitch/src/ofxPostGlitch.cpp; sourceTree = SOURCE_ROOT; };
 		4B809AAB1D4CAF16D81F66DE /* ofxRollingCam.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxRollingCam.h; path = ../../../addons/ofxRollingCam/src/ofxRollingCam.h; sourceTree = SOURCE_ROOT; };
 		67DBED026597C0EE427F0379 /* ofxPostGlitch.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPostGlitch.h; path = ../../../addons/ofxPostGlitch/src/ofxPostGlitch.h; sourceTree = SOURCE_ROOT; };
 		C6E6ACBABD11E244A070497C /* ofxRollingCam.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxRollingCam.cpp; path = ../../../addons/ofxRollingCam/src/ofxRollingCam.cpp; sourceTree = SOURCE_ROOT; };
+		CAF45341D212AF91AF3EEFBB /* ofxTrackingCamera.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxTrackingCamera.cpp; path = ../../../addons/ofxTrackingCamera/src/ofxTrackingCamera.cpp; sourceTree = SOURCE_ROOT; };
+		D5371BC8BC5B05A424B4B5CD /* ofxTrackingCamera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxTrackingCamera.h; path = ../../../addons/ofxTrackingCamera/src/ofxTrackingCamera.h; sourceTree = SOURCE_ROOT; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E4B69B5B0A3A1756003C02F2 /* coolCamDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coolCamDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofApp.cpp; path = src/ofApp.cpp; sourceTree = SOURCE_ROOT; };
-		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
+		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		F89255FF20A3349700A98CBB /* cameraInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cameraInterface.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A18CB6BE1369B540E2239D3 /* ofxTrackingCamera */ = {
+			isa = PBXGroup;
+			children = (
+				AB53411B6FA7812ABFB60D78 /* src */,
+			);
+			name = ofxTrackingCamera;
+			sourceTree = "<group>";
+		};
 		6948EE371B920CB800B5AC1A /* local_addons */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +94,15 @@
 			children = (
 				40C409F696FE990F95E1B9D3 /* ofxPostGlitch.cpp */,
 				67DBED026597C0EE427F0379 /* ofxPostGlitch.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		AB53411B6FA7812ABFB60D78 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				CAF45341D212AF91AF3EEFBB /* ofxTrackingCamera.cpp */,
+				D5371BC8BC5B05A424B4B5CD /* ofxTrackingCamera.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -100,6 +121,7 @@
 			children = (
 				D92A719EC4DFB00CB4A3047D /* ofxPostGlitch */,
 				D66DCBBD7AE5E0DE2981DF24 /* ofxRollingCam */,
+				1A18CB6BE1369B540E2239D3 /* ofxTrackingCamera */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -147,6 +169,7 @@
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
+				F89255FF20A3349700A98CBB /* cameraInterface.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -251,6 +274,7 @@
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				F6E7D6C01B3F2E112EB0533D /* ofxPostGlitch.cpp in Sources */,
 				1DC46FEBBD752B1B5E3799D5 /* ofxRollingCam.cpp in Sources */,
+				667011467B1042AA979F7B2A /* ofxTrackingCamera.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,8 +310,10 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
+					src,
 					../../../addons/ofxPostGlitch/src,
 					../../../addons/ofxRollingCam/src,
+					../../../addons/ofxTrackingCamera/src,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
@@ -321,8 +347,10 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
+					src,
 					../../../addons/ofxPostGlitch/src,
 					../../../addons/ofxRollingCam/src,
+					../../../addons/ofxTrackingCamera/src,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CPLUSPLUSFLAGS = (
@@ -349,8 +377,10 @@
 				GCC_MODEL_TUNING = NONE;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
+					src,
 					../../../addons/ofxPostGlitch/src,
 					../../../addons/ofxRollingCam/src,
+					../../../addons/ofxTrackingCamera/src,
 				);
 				ICON = "$(ICON_NAME_DEBUG)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
@@ -377,8 +407,10 @@
 				GCC_MODEL_TUNING = NONE;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
+					src,
 					../../../addons/ofxPostGlitch/src,
 					../../../addons/ofxRollingCam/src,
+					../../../addons/ofxTrackingCamera/src,
 				);
 				ICON = "$(ICON_NAME_RELEASE)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
